@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>뉴스 상세 보기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+<h2 th:text="|${news.title}|">뉴스 타이틀</h2>
+<hr>
+<div class="card w-75 mx-auto">
+    <img class="card-img-top" th:src="@{news.img}" alt="이미지 없음">
+    <div class="card-body">
+        <h4 class="card-title" th:text="|Date: ${news.date}|">Date: 2024-05-21</h4>
+        <p class="card-text" th:text="|Content : ${news.content}|">Content : 내용 없음</p>
+    </div>
+</div>
+<hr>
+<c:if test="${error != null}">
+    <div class="alert alert-danger alert-dismissible fade show mt-3">
+        error 발생 : ${error}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+</c:if>
+<a href="javascript:history.back()"><< Back</a>
+</body>
+</html>
