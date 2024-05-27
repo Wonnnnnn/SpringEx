@@ -24,8 +24,6 @@ public class Employee {
 
     private Long salary;
 
-    public Employee() {}
-
     public Employee(String empId, String empName, String department, EmpType empType, String joinDate, Long salary) {
         this.empId = empId;
         this.empName = empName;
@@ -33,6 +31,10 @@ public class Employee {
         this.empType = empType;
         this.joinDate = joinDate;
         this.salary = salary;
+    }
+
+    public Employee() {
+
     }
 
     public String getEmpId() {

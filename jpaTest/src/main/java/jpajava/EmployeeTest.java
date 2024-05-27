@@ -18,14 +18,15 @@ public class EmployeeTest {
             tx.begin();
             System.out.println("transaction begin");
             Employee employee =
-                    new Employee("202401","james", "it", EmpType.B, "2024-05-23", 300L);
+                    new Employee("202404","won", "it", EmpType.B, "2024-05-24", 300L);
             System.out.println("비영속");
+            System.out.println("before first cash");
             em.persist(employee);
             System.out.println("영속");
-            Employee employee1 = em.find(Employee.class, "202401");
-            System.out.println("DB에서 가져옴");
-            Employee employee2 = em.find(Employee.class, "202402");
-            System.out.println("1차 캐시");
+            System.out.println("after first cash");
+            Employee employee1 = em.find(Employee.class, "202404");
+            System.out.println("emp1, 1차 캐시 가져옴");
+            System.out.println("before commit");
             tx.commit();
             System.out.println("commit completed");
         } catch (Exception e) {
