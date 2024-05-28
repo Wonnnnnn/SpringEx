@@ -3,7 +3,7 @@ package org.example.ditest.service;
 import org.example.ditest.repository.PostRepository;
 import org.springframework.transaction.annotation.Transactional;
 import org.example.ditest.entity.Post;
-import org.example.ditest.dto.PostDTO;
+import org.example.ditest.dto.PostAPIDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,9 +34,9 @@ public class PostService {
     }
 
     @Transactional
-    public Post updatePost(PostDTO postDTO) {
-        Post post = postRepository.findById(postDTO.getPostId()).get();
-        post.setLikes(postDTO.getLikes());
+    public Post updatePost(PostAPIDTO postAPIDTO) {
+        Post post = postRepository.findById(postAPIDTO.getPostId()).get();
+        post.setLikes(postAPIDTO.getLikes());
         Post updatedPost = postRepository.save(post);
         return updatedPost;
     }

@@ -5,9 +5,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class PostDTO {
-    private String title;
-    private String body;
+public class PostAPIDTO {
     private int postId;
     private int Likes;
+    private String body;
 }

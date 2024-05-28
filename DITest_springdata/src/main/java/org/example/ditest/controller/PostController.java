@@ -1,7 +1,7 @@
 package org.example.ditest.controller;
 
 import org.example.ditest.entity.Post;
-import org.example.ditest.dto.PostDTO;
+import org.example.ditest.dto.PostAPIDTO;
 import org.example.ditest.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,9 +29,9 @@ public class PostController {
     }
 
     @PostMapping("/posts/{postid}")
-    public Post updatePost(@PathVariable int postid, @RequestBody PostDTO postDTO) {
-        postDTO.setPostId(postid);
-        Post post = postService.updatePost(postDTO);
+    public Post updatePost(@PathVariable int postid, @RequestBody PostAPIDTO postAPIDTO) {
+        postAPIDTO.setPostId(postid);
+        Post post = postService.updatePost(postAPIDTO);
         return post;
     }
 
