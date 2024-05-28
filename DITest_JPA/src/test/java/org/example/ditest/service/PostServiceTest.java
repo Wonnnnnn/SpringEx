@@ -22,7 +22,7 @@ class PostServiceTest {
     void 게시판_글작성_테스트() {
 
         //given
-        Post post = new Post(null, "test1","body1", 0);
+        Post post = new Post(null, "test1","body1", 0,"");
 //        //when
 //        Post post1 = postRepository.insert(post);
 //        //then

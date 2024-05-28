@@ -21,4 +21,7 @@ public class Post {
     private String body;
 
     private int likes;
+
+    @Column(length = 8)
+    private String userid;
 }

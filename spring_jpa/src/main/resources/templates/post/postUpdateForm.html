@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <style>
+      .center{
+          display: flex;
+          justify-content: center;
+      }
+      .col{
+          display: flex;
+          flex-direction: column;
+      }
+  </style>
+</head>
+<body>
+<h1 class="center">게시판 글 수정</h1>
+<p class="center">작성자 : <span th:text="${session.name}">user</span></p>
+<hr>
+<div class="w-75 mt-5 mx-auto justify-content-between align-item-center">
+  <div class="card card-body">
+    <form th:action="@{/posts/update/{postId}(postId=${post.postId})}"
+          th:object="${post}"
+          action="" method="post" class="col">
+      <label for="title" class="form-label">제목</label>
+      <input type="text" id="title" th:field="*{title}" readonly>
+      <label for="body" class="form-label">내용</label>
+      <textarea name="body" cols="30" rows="10" id="body" readonly>[[*{body}]]</textarea>
+      <label for="like" class="form-label">좋아요</label>
+      <input type="number" id="like" th:field="*{likes}">
+      <button type="submit" class="btn btn-success mt-3">저장</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

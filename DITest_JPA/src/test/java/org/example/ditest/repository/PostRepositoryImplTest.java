@@ -32,7 +32,7 @@ class PostRepositoryImplTest {
     @DisplayName("insert test")
     void insert() {
         sequence++;
-        Post post = new Post(sequence, "title1", "body1", 0);
+        Post post = new Post(sequence, "title1", "body1", 0, "");
         posts.put(sequence, post);
         org.assertj.core.api.Assertions.assertThat(posts.get(sequence)).isEqualTo("title1");
 //        Assertions.assertEquals(sequence, posts.get(sequence).getPostId());

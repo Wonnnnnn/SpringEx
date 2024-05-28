@@ -5,19 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-    <table>
-        <tr>
-            <th>postid</th>
-            <th>title</th>
-            <th>body</th>
-            <th>likes</th>
-        </tr>
-        <tr th:each=":${allPosts}">
-            <td th:text="${posts.postId}"></td>
-            <td th:text="${posts.title}"></td>
-            <td th:text="${posts.body}"></td>
-            <td th:text="${posts.likes}"></td>
-        </tr>
-    </table>
+<table>
+    <tr>
+        <th>postid</th>
+        <th>title</th>
+        <th>body</th>
+        <th>likes</th>
+    </tr>
+    <tr th:each=":${allPosts}">
+        <td th:text="${posts.postId}"></td>
+        <td th:text="${posts.title}"></td>
+        <td th:text="${posts.body}"></td>
+        <td th:text="${posts.likes}"></td>
+    </tr>
+</table>
 </body>
 </html>
