@@ -27,6 +27,7 @@ public class Employee {
   @Column(nullable = false)
   private Long salary;
 
-  @Column(name = "dept_name")
-  private String deptName;
+  @ManyToOne
+  @JoinColumn(name = "dept_id")
+  private Department deptName;
 }

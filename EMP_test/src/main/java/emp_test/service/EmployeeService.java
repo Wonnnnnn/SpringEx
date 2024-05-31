@@ -38,7 +38,7 @@ public class EmployeeService {
   @Transactional
   public Employee updateEmployee(String empId, EmployeeDTO employeeDto) {
     Employee orgEmployee = employeeRepository.findById(empId).get();
-    orgEmployee.setDeptName(employeeDto.getDeptName());
+    orgEmployee.setSalary((long) employeeDto.getSalary());
     Employee updatedEmployee = employeeRepository.save(orgEmployee);
     return updatedEmployee;
   }
