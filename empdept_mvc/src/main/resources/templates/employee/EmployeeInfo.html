@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        .center{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<h1 th:text="${employee.getEmpName()}" class="center"></h1>
+<hr>
+<div class="card w-75 mx-auto">
+    <div class="card-img-top center">
+        <h2><span th:text="${employee.getEmpId()}"></span></h2>
+    </div>
+    <div class="card-body">
+        <p>타입 : <span th:text="${employee.getEmpType().getDescription()}"></span></p>
+        <p>입사일 : <span th:text="${employee.getJoinDate()}"></span></p>
+        <p>월급 : <span th:text="${employee.getSalary()}"></span></p>
+        <p>부서 : <span th:text="${employee.getDepartment().getDeptName()}"></span></p>
+        <p>장비번호 : <span th:text="${employee.getEquipment().getSeqNo()}"></span></p>
+    </div>
+</div>
+<div class="center">
+    <button class="btn btn-success mt-3"><a class="text-light text-decoration-none" href="javascript:history.back()">Back</a></button>
+</div>
+</body>
+</html>

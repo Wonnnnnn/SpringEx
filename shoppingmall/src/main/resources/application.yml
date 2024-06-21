@@ -1,0 +1,25 @@
+
+spring:
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql://localhost:3306/jpashop?useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
+    username: root
+    password: dnjs9653
+  messages:
+    basename: messages, errors
+
+  jpa:
+    hibernate:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: true
+        format_sql: true
+        use_sql_comments:
+        hbm2ddl:
+          auto: none
+
+  server:
+    error:
+      whitelabel:
+        enabled: true

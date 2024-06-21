@@ -2,9 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/empTest" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/jpa_test" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/myjpatest" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/post-ex1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/spring-security-ex" vcs="Git" />
   </component>
 </project>

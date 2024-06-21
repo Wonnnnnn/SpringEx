@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee enrollment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        .col{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+<div class="w-75 mt-5 mx-auto justify-content-between align-item-center">
+    <div class="card card-body">
+        <form th:action="@{/employees/add}" action=""
+              th:object="${employee}" method="post" class="col">
+
+            <label for="empId" class="form-label">id</label>
+            <input type="text" id="empId" name="empId" >
+
+            <label for="empName" class="form-label">이름</label>
+            <input type="text" id="empName" name="empName" >
+
+            <label for="empType" class="form-label">직원 분류</label>
+            <select id="empType" name="empType" class="form-select">
+                <option value="">직원 분류 선택</option>
+                <option th:each="type : ${T(org.example.empdept_mvc.entity.EmpType).values()}"
+                        th:value="${type}" th:text="${type.getDescription()}"></option>
+            </select>
+
+            <label for="joinDate" class="form-label">입사일</label>
+            <input type="date" id="joinDate" name="joinDate" >
+
+            <label for="salary" class="form-label">월급</label>
+            <input type="text" id="salary" name="salary" >
+
+            <label for="deptName" class="form-label">부서</label>
+            <select id="deptName" name="deptName" class="form-select">
+                <option value="">부서 선택</option>
+                <option th:each="department : ${departments}" th:value="${department.deptName}"
+                        th:text="${department.deptName}"></option>
+            </select>
+
+            <label for="seqNo" class="form-label">장비 번호</label>
+            <select id="seqNo" name="seqNo" class="form-select">
+                <option value="">장비 선택</option>
+                <option th:each="equipment : ${equipments}" th:value="${equipment.seqNo}"
+                        th:text="${equipment.seqNo}"></option>
+            </select>
+
+            <button type="submit" class="btn btn-success mt-3">저장</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
